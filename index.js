@@ -30,11 +30,12 @@ var beats = document.getElementById("heartbeat")
 
 var setmori = function() {
     var age = (new Date()).getTime() - birth // Miliseconds of age
-    var bps = (72/60)/1000 // Heartbeats per milisecond
+    var msphb = 833 // Miliseconds per heartbeat, given 72 beats per second.
     var total = 2600000000
+    var used  = Math.floor(age / msphb)
 
     clock.innerHTML = getmori().replace(/:/g, delim)
-    beats.innerHTML = Math.floor(total - (bps * age))
+    beats.innerHTML = Math.floor(total - used)
 }
 
 var playsounds = function() {
