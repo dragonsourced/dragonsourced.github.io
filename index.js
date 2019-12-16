@@ -1,7 +1,6 @@
-var clock = document.getElementById("clock")
 var sounds = {
-    "ticking"   : new Audio("ticking.mp3"),
-    "heartbeat" : new Audio("heartbeat.wav")
+    "ticking"   : new Audio("assets/audio/ticking.mp3"),
+    "heartbeat" : new Audio("assets/audio/heartbeat.wav")
 }
 
 var MINUTE = 60
@@ -26,17 +25,28 @@ var getmori = function() {
     return days + ":" + hours + ":" + minutes + ":" + seconds
 }
 
-var setmori = () => clock.innerHTML = getmori().replace(/:/g, delim)
+var clock = document.getElementById("clock")
+var beats = document.getElementById("heartbeat")
+
+var setmori = function() {
+    var age = (new Date()).getTime() - birth // Miliseconds of age
+    var bps = (72/60)/1000 // Heartbeats per milisecond
+    var total = 2600000000
+
+    clock.innerHTML = getmori().replace(/:/g, delim)
+    beats.innerHTML = Math.floor(total - (bps * age))
+}
+
 var playsounds = function() {
     var loop = ["ticking", "heartbeat"]
-    for (var i = 0; i < loop.length(); ++i) {
-        sounds[loop[i].loop] = true
-        sounds[loop[i].loop].play()
+    for (var i = 0; i < loop.length; ++i) {
+        sounds[loop[i]].loop = true
+        sounds[loop[i]].play()
     }
 }
 
 setmori()
 playsounds()
-setInterval(setmori, 1000)
+setInterval(setmori, 1)
 
 // vi: et sw=4

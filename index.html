@@ -1,34 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-<style>
-body {
-    background-color: black;
-    text-align; center;
-    padding: none;
-    margin: none;
-    border: none;
-    color: white;
-}
-#clock-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    align; center;
-    font-family: "Charter", "Bitstream Charter", serif;
-    font-size: calc(20px + 2vw);
-    font-variant-numeric: oldstyle-nums;
-}
-.delim {
-    opacity: 0.5;
-}
-</style>
+	    <meta charset="UTF-8">
+	    <link rel="stylesheet" href="index.css">
     </head>
     <body>
         <div align=center id="clock-container">
-            <label id="clock"></label>
+            <span id="clock"></span>
+	    <br>
+	    <div id="heartbeat"></div><div id="heart">♥</div>
         </div>
     </body>
     <script src="index.js"></script>
