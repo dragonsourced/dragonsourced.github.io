@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<style>
+body {
+    background-color: black;
+    text-align; center;
+    padding: none;
+    margin: none;
+    border: none;
+    color: white;
+}
+#clock-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    align; center;
+    font-family: "Charter", "Bitstream Charter", serif;
+    font-size: calc(20px + 2vw);
+    font-variant-numeric: oldstyle-nums;
+}
+.delim {
+    opacity: 0.5;
+}
+</style>
+    </head>
+    <body>
+        <div align=center id="clock-container">
+            <label id="clock"></label>
+        </div>
+    </body>
+    <script>
+        var clock = document.getElementById("clock")
+        var sound = new Audio("Ticking-clock-sound.mp3")
+
+        var MINUTE = 60
+        var HOUR   = MINUTE * 60
+        var DAY    = HOUR * 24
+        var YEAR   = DAY * 365
+
+        var lifespan = 80
+        var birth = (new Date(2004,            2, 2)).getTime()
+        var death = (new Date(2004 + lifespan, 2, 2)).getTime()
+        var delim = "<label class='delim'>:</label>"
+
+        var getmori = function() {
+            var time  = (new Date()).getTime()
+            var seconds = Math.round((death - time) / 1000)
+            var days    = Math.floor(seconds / DAY)
+            seconds -= days * DAY
+            var hours   = Math.floor(seconds / HOUR)
+            seconds -= hours * HOUR
+            var minutes = Math.floor(seconds / MINUTE)
+            seconds -= minutes * MINUTE
+            return days + ":" + hours + ":" + minutes + ":" + seconds
+        }
+
+        var setmori = () => clock.innerHTML = getmori().replace(/:/g, delim)
+
+        setmori()
+        sound.loop = true;
+        sound.play()
+        setInterval(setmori, 1000)
+    </script>
+</html>
+
+<!-- vi: et sw=4
+-->
