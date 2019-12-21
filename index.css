@@ -8,12 +8,10 @@
 }
 
 body {
-    background-color: black;
     text-align; center;
     padding: none;
     margin: none;
     border: none;
-    color: white;
     font-size: 10pt;
     font-family: "Charter", "Bitstream Charter", serif;
 }
@@ -23,7 +21,6 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
     align; center;
 }
 
@@ -52,6 +49,3 @@ body {
     width: 15pt;
     line-height: 15pt;
 }
-
-/* vi: et sw=4
- */
