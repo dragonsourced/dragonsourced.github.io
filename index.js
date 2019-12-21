@@ -49,5 +49,3 @@ var playsounds = function() {
 setmori()
 playsounds()
 setInterval(setmori, 1)
-
-// vi: et sw=4
