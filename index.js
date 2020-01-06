@@ -26,7 +26,6 @@ var getmori = function() {
 }
 
 var clock = document.getElementById("clock")
-var beats = document.getElementById("heartbeat")
 
 var setmori = function() {
     var age = (new Date()).getTime() - birth // Miliseconds of age
@@ -35,7 +34,6 @@ var setmori = function() {
     var used  = Math.floor(age / msphb)
 
     clock.innerHTML = getmori().replace(/:/g, delim)
-    beats.innerHTML = Math.floor(total - used)
 }
 
 var playsounds = function() {
