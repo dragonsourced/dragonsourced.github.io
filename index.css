@@ -1,51 +1,26 @@
-@keyframes heartbeat {
-    20% {
-        font-size: 12pt;
-    }
-    40% {
-        font-size: 15pt;
-    }
+html {
+    font-size: calc(10pt + 3vw);
+    font-family: "Charter", "Bitstream Charter", serif;
+    font-variant-numeric: oldstyle-nums;
+    background-color: black;
+    color: #d8dee9;
 }
 
 body {
-    text-align; center;
-    padding: none;
-    margin: none;
-    border: none;
-    font-size: 10pt;
-    font-family: "Charter", "Bitstream Charter", serif;
+    height: 100%;
 }
 
-#clock-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#center {
+    margin: auto;
+    margin-top: 40vh;
     text-align: center;
 }
 
-#clock {
-    font-size: calc(20pt + 2vw);
-    font-variant-numeric: oldstyle-nums;
+#name {
+    font-family: "Propisi Bold", script, sans-serif, serif;
+    font-size: calc(30pt + 3vw);
 }
 
 .delim {
     opacity: 0.5;
-}
-
-#heartbeat {
-    color: #fc4e23;
-    height: 15pt;
-    line-height: 15pt;
-    font-size: 10pt;
-    display: inline-block;
-}
-
-#heart {
-    animation: heartbeat 833ms infinite;
-    color: #fc4e23;
-    font-size: 10pt;
-    height: 15pt;
-    width: 15pt;
-    line-height: 15pt;
 }
