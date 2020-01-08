@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff&display=swap');
+
 html {
-    font-size: calc(10pt + 3vw);
     font-family: "Charter", "Bitstream Charter", serif;
     font-variant-numeric: oldstyle-nums;
     background-color: black;
@@ -16,9 +17,13 @@ body {
     text-align: center;
 }
 
-#name {
-    font-family: "Propisi Bold", script, sans-serif, serif;
-    font-size: calc(30pt + 3vw);
+#clock {
+    font-size: 30pt;
+}
+
+.mmori {
+    font-size: 20pt;
+    font-family: "Herr Von Muellerhoff", cursive;
 }
 
 .delim {
